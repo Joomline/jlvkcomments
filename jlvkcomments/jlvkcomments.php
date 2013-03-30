@@ -2,8 +2,8 @@
 /**
  * Jlvkcomments
  *
- * @version 1.3
- * @author Anton Voynov (anton@joomline.ru)
+ * @version 1.8
+ * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
  * @copyright (C) 2010 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  **/
@@ -17,6 +17,11 @@ class plgContentJlvkcomments extends JPlugin
 {
 
 	public function onContentPrepare($context, &$article, &$params, $page = 0){
+	if($context == 'com_content.article'){
+
+		JPlugin::loadLanguage( 'plg_content_Jlvkcomments' );	
+
+
 
 		if (strpos($article->text, '{jlvkcomments-off}') !== false) {
 			$article->text = str_replace("{jlvkcomments-off}","",$article->text);
@@ -53,7 +58,7 @@ class plgContentJlvkcomments extends JPlugin
 					VK.Widgets.Comments('jlvkcomments', {limit: $comLimit, width: '$width', attach: '$attach', autoPublish: $autoPublish, norealtime: $norealtime},$pagehash);
 					</script>
 					<div style="text-align: right;">
-					<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://www.38i.ru/">Расширения для joomla</a>
+					<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://www.38i.ru/">www.38i.ru</a>
 				</div>
 					
 HTML;
@@ -71,6 +76,6 @@ HTML;
 		}
 
 	}
-
+}
 
 }

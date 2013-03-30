@@ -6,7 +6,7 @@
 <url>http://joomline.ru</url>
 <packager>JoomLine.ru</packager>
 <packagerurl>http://joomline.ru</packagerurl>
-<description>Комментарии ВКонтакте для Joomla 1.6</description>
+<description>Комментарии ВКонтакте для Joomla 2.5 и Joomla 3.0</description>
 <files>
         <file type="plugin" client="site">jlvkcomments.zip</file>
         <file type="plugin" client="site">jlvkcommentson.zip</file>

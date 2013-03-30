@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="1.6" type="plugin" group="editors-xtd">
+<extension version="1.6" type="plugin" group="editors-xtd" method="upgrade">
 	<name>Кнопка - Вкл комментарии ВКонтакте</name>
 	<author>JoomLine</author>
 	<creationDate>Sep 2010</creationDate>

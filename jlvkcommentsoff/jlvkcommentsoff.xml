@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="editors-xtd">
+	<name>Кнопка - Выкл комментарии ВКонтакте</name>
+	<author>JoomLine</author>
+	<creationDate>Sep 2010</creationDate>
+	<copyright>(C) 2010-2011 by Anton Voynov(http://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>anton@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>1.3</version>
+	<description>Кнопка выключения комментариев ВКонтакте в статье</description>
+	<files>
+		<filename plugin="jlvkcommentsoff">jlvkcommentsoff.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>

@@ -47,7 +47,7 @@ class plgContentJlvkcomments extends JPlugin
 				$norealtime = $this->params->def('norealtime');
 				$script = "VK.init({apiId: $apiId, onlyWidgets: true});";
 
-				$doc->addScript("http://vkontakte.ru/js/api/openapi.js?22");
+				$doc->addScript('//vk.com/js/api/openapi.js?22');
 				$doc->addScriptDeclaration($script);
 
 				$pagehash = $article->id;

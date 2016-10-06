@@ -2,7 +2,7 @@
 /**
  * Jlvkcomments
  *
- * @version 1.8
+ * @version 1.8.1
  * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
  * @copyright (C) 2010 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
@@ -47,7 +47,7 @@ class plgContentJlvkcomments extends JPlugin
 				$norealtime = $this->params->def('norealtime');
 				$script = "VK.init({apiId: $apiId, onlyWidgets: true});";
 
-				$doc->addScript('//vk.com/js/api/openapi.js?22');
+				$doc->addScript('//vk.com/js/api/openapi.js?131');
 				$doc->addScriptDeclaration($script);
 
 				$pagehash = $article->id;

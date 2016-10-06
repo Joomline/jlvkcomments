@@ -8,7 +8,7 @@
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://joomline.ru</authorUrl>
 	<version>1.8.1</version>
-	<description>Plugin allow integrate VK comments into your joomla based site</description>
+	<description><![CDATA[Plugin allow integrate VK comments into your joomla based site<br><iframe frameborder='0' allowtransparency='true' scrolling='no' src='https://money.yandex.ru/embed/donate.xml?account=41001531672137&quickpay=donate&payment-type-choice=on&mobile-payment-type-choice=on&default-sum=100&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9+%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD+JL+VKComments&target-visibility=on&project-name=JL+VKComments&project-site=http%3A%2F%2Fjoomline.ru%2Frasshirenija%2Fplugin%2Fplugin-jl-vkcomments.html&button-text=05&successURL=' width='508' height='117'></iframe>]]></description>
 	<files>
 		<filename plugin="jlvkcomments">jlvkcomments.php</filename>
 		<filename>index.html</filename>

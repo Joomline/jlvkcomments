@@ -7,42 +7,52 @@
 	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://joomline.ru</authorUrl>
-	<version>1.8.1</version>
-	<description><![CDATA[Plugin allow integrate VK comments into your joomla based site<br><iframe frameborder='0' allowtransparency='true' scrolling='no' src='https://money.yandex.ru/embed/donate.xml?account=41001531672137&quickpay=donate&payment-type-choice=on&mobile-payment-type-choice=on&default-sum=100&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9+%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD+JL+VKComments&target-visibility=on&project-name=JL+VKComments&project-site=http%3A%2F%2Fjoomline.ru%2Frasshirenija%2Fplugin%2Fplugin-jl-vkcomments.html&button-text=05&successURL=' width='508' height='117'></iframe>]]></description>
+	<version>1.9.0</version>
+	<description>PLG_JLVKCOMMENTS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="jlvkcomments">jlvkcomments.php</filename>
 		<filename>index.html</filename>
 	</files>
+	<languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_jlvkcomments.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_jlvkcomments.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jlvkcomments.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jlvkcomments.sys.ini</language>
+    </languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="apiId" type="text" label="api ID для вашего сайта" default="api ID"/>
-				<field name="comLimit" type="text" label="Количество комментариев" default="10"/>
-				<field name="width" type="text" label="Ширина блока комментариев" default="0" description="Укажите ширину блока комментраиев. Если указано 0 - то по ширине страницы"/>
-				<field name="autoAdd" type="radio" default="0" label="Автодобавление" description="Укажите нужно ли автоматически добавлять форму комментариев к каждой статье">
-				  <option value="0">Нет</option>
-				  <option value="1">Да</option>
+				<field name="apiId" type="text" label="PLG_JLVKCOMMENTS_APIID_LABEL" default="api ID"/>
+				<field name="comLimit" type="text" label="PLG_JLVKCOMMENTS_COUNT_LABEL" default="10"/>
+				<field name="width" type="text" label="PLG_JLVKCOMMENTS_WIDTH_LABEL" default="0" description="PLG_JLVKCOMMENTS_WIDTH_DESC"/>
+				<field name="autoAdd" type="radio" default="0" label="PLG_JLVKCOMMENTS_AUTOADD_LABEL" description="PLG_JLVKCOMMENTS_AUTOADD_DESC">
+				  <option value="0">PLG_JLVKCOMMENTS_NO</option>
+				  <option value="1">PLG_JLVKCOMMENTS_YES</option>
 				</field>
-				<field name="attach" type="list" default="*" label="Прикрепление файлов" description="Задает возможность создания прикреплений к комментариям">
-				  <option value="*">Все</option>
-				  <option value="false">Отключить</option>
-				  <option value="graffiti">Графити</option>
-				  <option value="photo">Фото</option>
-				  <option value="audio">Аудито</option>
-				  <option value="video">Видео</option>
-				  <option value="link">Ссылки</option>
+				<field name="attach" type="list" default="*" label="PLG_JLVKCOMMENTS_ATTACH_LABEL" description="PLG_JLVKCOMMENTS_ATTACH_DESC">
+				  <option value="*">PLG_JLVKCOMMENTS_ATTACH_ALL</option>
+				  <option value="false">PLG_JLVKCOMMENTS_ATTACH_OFF</option>
+				  <option value="graffiti">PLG_JLVKCOMMENTS_ATTACH_GRAFF</option>
+				  <option value="photo">PLG_JLVKCOMMENTS_ATTACH_PHOTO</option>
+				  <option value="audio">PLG_JLVKCOMMENTS_ATTACH_AUDIO</option>
+				  <option value="video">PLG_JLVKCOMMENTS_ATTACH_VIDEO</option>
+				  <option value="link">PLG_JLVKCOMMENTS_ATTACH_LINKS</option>
 				</field>
-				<field name="autoPublish" type="radio" default="1" label="Автопубликация" description="Автоматическая публикация комментария в статус пользователю">
-				  <option value="0">Нет</option>
-				  <option value="1">Да</option>
+				<field name="autoPublish" type="radio" default="1" label="PLG_JLVKCOMMENTS_PUBLISH_LABEL" description="PLG_JLVKCOMMENTS_PUBLISH_DESC">
+				  <option value="0">PLG_JLVKCOMMENTS_NO</option>
+				  <option value="1">PLG_JLVKCOMMENTS_YES</option>
 				</field>
-				<field name="norealtime" type="radio" default="0" label="Автообновление" description="Обновление ленты комментариев в реальном времени">
-				  <option value="1">Нет</option>
-				  <option value="0">Да</option>
+				<field name="norealtime" type="radio" default="0" label="PLG_JLVKCOMMENTS_REAL_LABEL" description="PLG_JLVKCOMMENTS_REAL_DESC">
+				  <option value="1">PLG_JLVKCOMMENTS_NO</option>
+				  <option value="0">PLG_JLVKCOMMENTS_YES</option>
 				</field>
 				<field name="categories" type="category" extension='com_content' default="0" multiple="multiple"
-						label="Исключить категории"
-						description="Укажите категории в которых не будет добавляться виджет комментариев"/>
+						label="PLG_JLVKCOMMENTS_CAT_LABEL"
+						description="PLG_JLVKCOMMENTS_CAT_DESC"/>
+				<field name="link" type="radio" label="PLG_JLVKCOMMENTS_LINK_LABEL" description="PLG_JLVKCOMMENTS_LINK_DESCRIPTION" default="1">
+					<option value="0">PLG_JLVKCOMMENTS_YES</option>
+					<option value="1">PLG_JLVKCOMMENTS_NO</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

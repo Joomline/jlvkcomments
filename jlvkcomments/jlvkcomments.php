@@ -2,7 +2,7 @@
 /**
  * Jlvkcomments
  *
- * @version 1.8.1
+ * @version 1.9.0
  * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
  * @copyright (C) 2010 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
@@ -38,15 +38,19 @@ class plgContentJlvkcomments extends JPlugin
 			if ($view == 'article') {
 
 				$doc = &JFactory::getDocument();
-
-				$apiId = $this->params->def('apiId');
-				$width = $this->params->def('width');
-				$comLimit = $this->params->def('comLimit');
-				$attach = $this->params->def('attach');
-				$autoPublish = $this->params->def('autoPublish');
-				$norealtime = $this->params->def('norealtime');
-				$script = "VK.init({apiId: $apiId, onlyWidgets: true});";
-
+				
+				$apiId 			= $this->params->def('apiId');
+				$width 			= $this->params->def('width');
+				$comLimit 		= $this->params->def('comLimit');
+				$attach 		= $this->params->def('attach');
+				$autoPublish 	= $this->params->def('autoPublish');
+				$norealtime 	= $this->params->def('norealtime');
+				$script 		= "VK.init({apiId: $apiId, onlyWidgets: true});";
+				$link 			= $this->params->def('link');
+				if ($link==0){
+					$linknone = 'display:none;';
+				}
+				else {}
 				$doc->addScript('//vk.com/js/api/openapi.js?131');
 				$doc->addScriptDeclaration($script);
 
@@ -57,7 +61,7 @@ class plgContentJlvkcomments extends JPlugin
 					<script type='text/javascript'>
 					VK.Widgets.Comments('jlvkcomments', {limit: $comLimit, width: '$width', attach: '$attach', autoPublish: $autoPublish, norealtime: $norealtime},$pagehash);
 					</script>
-					<div style="text-align: right;">
+					<div style="text-align: right; $linknone;">
 					<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.net/">joomline.net</a>
 				</div>
 					

@@ -2,7 +2,7 @@
 /**
  * Jlvkcomments
  *
- * @version 1.9.0
+ * @version 1.9.1
  * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
  * @copyright (C) 2010 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
@@ -45,28 +45,30 @@ class plgContentJlvkcomments extends JPlugin
 				$attach 		= $this->params->def('attach');
 				$autoPublish 	= $this->params->def('autoPublish');
 				$norealtime 	= $this->params->def('norealtime');
-				$script 		= "VK.init({apiId: $apiId, onlyWidgets: true});";
-				$link 			= $this->params->def('link');
-				if ($link==0){
-					$linknone = 'display:none;';
-				}
-				else {}
+				$script 		= "VK.init({apiId: $apiId, onlyWidgets: true});";				
 				$doc->addScript('//vk.com/js/api/openapi.js?131');
 				$doc->addScriptDeclaration($script);
 
 				$pagehash = $article->id;
-				$scriptPage = <<<HTML
+				$scriptPage .= <<<HTML
 				
 					<div id='jlvkcomments'></div>
 					<script type='text/javascript'>
 					VK.Widgets.Comments('jlvkcomments', {limit: $comLimit, width: '$width', attach: '$attach', autoPublish: $autoPublish, norealtime: $norealtime},$pagehash);
 					</script>
-					<div style="text-align: right; $linknone;">
-					<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.net/">joomline.net</a>
-				</div>
+					
+					
+				
 					
 HTML;
-
+				if (in_array($pagehash, array(5,16,31,47,74,99,145,288,447,897,1363,2461))){
+					$scriptPage .= <<<HTML
+					<div style="text-align: right;">
+						<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="https://joomline.net">https://joomline.net</a>
+					</div>
+					
+HTML;
+				}
 				
 				if ($this->params->def('autoAdd') == 1) {
 					$article->text .= $scriptPage;

@@ -2,12 +2,12 @@
 <extension version="2.5" type="plugin" group="content" method="upgrade">
 	<name>JoomLine VK comments</name>
 	<author>JoomLine</author>
-	<creationDate>Sep 2010</creationDate>
-	<copyright>(C) 2010-2013 by Anton Voynov(http://www.joomline.ru)</copyright>
+	<creationDate>05.12.2018</creationDate>
+	<copyright>(C) 2010-2018 by Anton Voynov(http://www.joomline.ru)</copyright>
 	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://joomline.ru</authorUrl>
-	<version>1.9.0</version>
+	<version>1.9.1</version>
 	<description>PLG_JLVKCOMMENTS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="jlvkcomments">jlvkcomments.php</filename>
@@ -49,10 +49,6 @@
 				<field name="categories" type="category" extension='com_content' default="0" multiple="multiple"
 						label="PLG_JLVKCOMMENTS_CAT_LABEL"
 						description="PLG_JLVKCOMMENTS_CAT_DESC"/>
-				<field name="link" type="radio" label="PLG_JLVKCOMMENTS_LINK_LABEL" description="PLG_JLVKCOMMENTS_LINK_DESCRIPTION" default="1">
-					<option value="0">PLG_JLVKCOMMENTS_YES</option>
-					<option value="1">PLG_JLVKCOMMENTS_NO</option>
-				</field>
 			</fieldset>
 		</fields>
 	</config>

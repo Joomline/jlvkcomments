@@ -2,9 +2,9 @@
 /**
  * Jlvkcomments
  *
- * @version 1.9.1
+ * @version 2.0.0
  * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
- * @copyright (C) 2010 by Anton Voynov(http://www.joomline.ru)
+ * @copyright (C) 2010-2022 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  **/
 
@@ -12,6 +12,7 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.plugin.plugin');
+
 
 class plgContentJlvkcomments extends JPlugin
 {
@@ -34,7 +35,7 @@ class plgContentJlvkcomments extends JPlugin
 
 		$exceptcat = is_array($this->params->def('categories')) ? $this->params->def('categories') : array($this->params->def('categories'));
 		if (!in_array($article->catid,$exceptcat)) {
-			$view = JRequest::getCmd('view');
+			$view = JFactory::getApplication()->input->get('view');
 			if ($view == 'article') {
 
 				$doc = &JFactory::getDocument();
@@ -46,7 +47,7 @@ class plgContentJlvkcomments extends JPlugin
 				$autoPublish 	= $this->params->def('autoPublish');
 				$norealtime 	= $this->params->def('norealtime');
 				$script 		= "VK.init({apiId: $apiId, onlyWidgets: true});";				
-				$doc->addScript('//vk.com/js/api/openapi.js?131');
+				$doc->addScript('//vk.com/js/api/openapi.js?169');
 				$doc->addScriptDeclaration($script);
 
 				$pagehash = $article->id;

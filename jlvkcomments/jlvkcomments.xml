@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="content" method="upgrade">
+<extension version="3.10" type="plugin" group="content" method="upgrade">
 	<name>JoomLine VK comments</name>
 	<author>JoomLine</author>
-	<creationDate>05.12.2018</creationDate>
-	<copyright>(C) 2010-2018 by Anton Voynov(http://www.joomline.ru)</copyright>
+	<creationDate>14.06.2022</creationDate>
+	<copyright>(C) 2010-2022 by Anton Voynov(https://www.joomline.ru)</copyright>
 	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>sale@joomline.ru</authorEmail>
-	<authorUrl>http://joomline.ru</authorUrl>
-	<version>1.9.1</version>
+	<authorUrl>https://joomline.ru</authorUrl>
+	<version>2.0.0</version>
 	<description>PLG_JLVKCOMMENTS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="jlvkcomments">jlvkcomments.php</filename>
@@ -52,5 +52,5 @@
 			</fieldset>
 		</fields>
 	</config>
-	<updateservers><server type="extension" priority="1" name="Joomline">http://joomline.net/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=13&amp;dummy=extension.xml</server></updateservers>
+	<updateservers><server type="extension" priority="1" name="Joomline">https://joomline.net/update.html?extension_id=14.xml</server></updateservers>
 </extension>

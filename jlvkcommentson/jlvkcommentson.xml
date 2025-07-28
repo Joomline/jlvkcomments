@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="5.0" type="plugin" group="editors-xtd" method="upgrade">
 	<name>Кнопка - Вкл комментарии ВКонтакте</name>
-	<author>JoomLine</author>
-	<creationDate>Sep 2010</creationDate>
-	<copyright>(C) 2010-2024 by Anton Voynov(http://www.joomline.ru)</copyright>
+	<author>Joomline</author>
+	<creationDate>28.07.2025</creationDate>
+	<copyright>(C) 2010-2025 by Joomline(http://www.joomline.ru)</copyright>
 	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
-	<authorEmail>anton@joomline.ru</authorEmail>
+	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://joomline.ru</authorUrl>
 	<version>2.0.0</version>
 	<description>Кнопка включения комментариев ВКонтакте в статье</description>

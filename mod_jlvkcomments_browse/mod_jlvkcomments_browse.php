@@ -3,8 +3,8 @@
  * JoomLine VK Comments Browse Module
  *
  * @version 1.0.0
- * @author Anton Voynov (anton@joomline.ru)
- * @copyright (C) 2010-2024 by Anton Voynov(http://www.joomline.ru)
+ * @author Joomline (sale@joomline.ru)
+ * @copyright (C) 2010-2025 by Joomline(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  */
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="5.0" type="module" client="site" method="upgrade">
 	<name>JoomLine VK Comments Browse</name>
-	<author>JoomLine</author>
-	<creationDate>2024</creationDate>
-	<copyright>(C) 2010-2024 by Anton Voynov(https://www.joomline.ru)</copyright>
+	<author>Joomline</author>
+	<creationDate>28.07.2025</creationDate>
+	<copyright>(C) 2010-2025 by Joomline(https://www.joomline.ru)</copyright>
 	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>https://joomline.ru</authorUrl>

@@ -63,7 +63,26 @@ class PlgButtonJlvkcommentsoff extends CMSPlugin
 				if (content && content.match(/{jlvkcomments-off}/)) {
 					return false;
 				} else {
-					jInsertEditorText('{jlvkcomments-off}', editor);
+					// Modern Joomla 5 editor API
+					if (typeof Joomla !== 'undefined' && Joomla.editors && Joomla.editors.instances && Joomla.editors.instances[editor]) {
+						var currentContent = Joomla.editors.instances[editor].getValue();
+						Joomla.editors.instances[editor].setValue(currentContent + '{jlvkcomments-off}');
+					} else if (typeof tinyMCE !== 'undefined' && tinyMCE.get(editor)) {
+						var currentContent = tinyMCE.get(editor).getContent();
+						tinyMCE.get(editor).setContent(currentContent + '{jlvkcomments-off}');
+					} else if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances[editor]) {
+						var currentContent = CKEDITOR.instances[editor].getData();
+						CKEDITOR.instances[editor].setData(currentContent + '{jlvkcomments-off}');
+					} else {
+						// Fallback for regular textarea
+						var textarea = document.getElementById(editor);
+						if (textarea) {
+							textarea.value += '{jlvkcomments-off}';
+							// Trigger change event
+							var event = new Event('input', { bubbles: true });
+							textarea.dispatchEvent(event);
+						}
+					}
 				}
 			}
 		";
@@ -76,6 +95,7 @@ class PlgButtonJlvkcommentsoff extends CMSPlugin
 		$button->set('text', "Выкл JLVKComments");
 		$button->set('name', 'butttonjlvkcommentsoff');
 		$button->set('link', '#');
+		$button->set('icon', 'fas fa-comments-slash');
 
 		return $button;
 	}

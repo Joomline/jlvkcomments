@@ -63,7 +63,26 @@ class PlgButtonJlvkcommentson extends CMSPlugin
 				if (content && content.match(/{jlvkcomments}/)) {
 					return false;
 				} else {
-					jInsertEditorText('{jlvkcomments}', editor);
+					// Modern Joomla 5 editor API
+					if (typeof Joomla !== 'undefined' && Joomla.editors && Joomla.editors.instances && Joomla.editors.instances[editor]) {
+						var currentContent = Joomla.editors.instances[editor].getValue();
+						Joomla.editors.instances[editor].setValue(currentContent + '{jlvkcomments}');
+					} else if (typeof tinyMCE !== 'undefined' && tinyMCE.get(editor)) {
+						var currentContent = tinyMCE.get(editor).getContent();
+						tinyMCE.get(editor).setContent(currentContent + '{jlvkcomments}');
+					} else if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances[editor]) {
+						var currentContent = CKEDITOR.instances[editor].getData();
+						CKEDITOR.instances[editor].setData(currentContent + '{jlvkcomments}');
+					} else {
+						// Fallback for regular textarea
+						var textarea = document.getElementById(editor);
+						if (textarea) {
+							textarea.value += '{jlvkcomments}';
+							// Trigger change event
+							var event = new Event('input', { bubbles: true });
+							textarea.dispatchEvent(event);
+						}
+					}
 				}
 			}
 		";
@@ -76,6 +95,7 @@ class PlgButtonJlvkcommentson extends CMSPlugin
 		$button->set('text', "Вкл JLVKComments");
 		$button->set('name', 'butttonjlvkcommentson');
 		$button->set('link', '#');
+		$button->set('icon', 'fas fa-comments');
 
 		return $button;
 	}

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<extension type="package" version="2.5">
+<extension type="package" version="5.0" method="upgrade">
 <name>JoomLine VKComments pack</name>
 <packagename>jlvkcomments</packagename>
-<version>1.8.1</version>
+<version>3.0.0</version>
 <url>http://joomline.ru</url>
 <packager>JoomLine.ru</packager>
 <packagerurl>http://joomline.ru</packagerurl>
-<description>Комментарии ВКонтакте для Joomla 2.5 и Joomla 3.0</description>
+<description>Комментарии ВКонтакте для Joomla 5.0</description>
 <files>
-        <file type="plugin" client="site">jlvkcomments.zip</file>
-        <file type="plugin" client="site">jlvkcommentson.zip</file>
-        <file type="plugin" client="site">jlvkcommentsoff.zip</file>
+        <file type="plugin" client="site" group="content">jlvkcomments</file>
+        <file type="plugin" client="site" group="editors-xtd">jlvkcommentson</file>
+        <file type="plugin" client="site" group="editors-xtd">jlvkcommentsoff</file>
 </files>
 </extension>

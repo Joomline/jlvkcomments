@@ -14,6 +14,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\WebAsset\WebAssetManager;
 
 /**
  * Jlvkcomments plugin
@@ -92,17 +93,17 @@ class PlgContentJlvkcomments extends CMSPlugin
 		$autoPublish = $this->params->get('autoPublish', 1);
 		$norealtime = $this->params->get('norealtime', 0);
 
-		// Add VK API script
-		$doc = Factory::getDocument();
-		$doc->addScript('//vk.com/js/api/openapi.js?169');
+		// Add VK API script using WebAssetManager
+		$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+		$wa->registerAndUseScript('vk-api', 'https://vk.com/js/api/openapi.js?169', [], []);
 		
-		$script = "VK.init({apiId: " . (int)$apiId . ", onlyWidgets: true});";
-		$doc->addScriptDeclaration($script);
-
 		// Generate comments widget HTML
 		$pagehash = $article->id;
 		$scriptPage = '<div id="jlvkcomments"></div>';
 		$scriptPage .= '<script type="text/javascript">';
+		$scriptPage .= 'function initVKComments() {';
+		$scriptPage .= 'if (typeof VK !== "undefined") {';
+		$scriptPage .= 'VK.init({apiId: ' . (int)$apiId . ', onlyWidgets: true});';
 		$scriptPage .= 'VK.Widgets.Comments("jlvkcomments", {';
 		$scriptPage .= 'limit: ' . (int)$comLimit . ', ';
 		$scriptPage .= 'width: "' . (int)$width . '", ';
@@ -110,6 +111,11 @@ class PlgContentJlvkcomments extends CMSPlugin
 		$scriptPage .= 'autoPublish: ' . (int)$autoPublish . ', ';
 		$scriptPage .= 'norealtime: ' . (int)$norealtime;
 		$scriptPage .= '}, ' . (int)$pagehash . ');';
+		$scriptPage .= '} else {';
+		$scriptPage .= 'setTimeout(initVKComments, 500);';
+		$scriptPage .= '}';
+		$scriptPage .= '}';
+		$scriptPage .= 'document.addEventListener("DOMContentLoaded", initVKComments);';
 		$scriptPage .= '</script>';
 
 		// Add attribution link (only on specific pages)

@@ -25,6 +25,13 @@
 				<field name="apiId" type="text" label="PLG_JLVKCOMMENTS_APIID_LABEL" default="api ID"/>
 				<field name="comLimit" type="text" label="PLG_JLVKCOMMENTS_COUNT_LABEL" default="10"/>
 				<field name="width" type="text" label="PLG_JLVKCOMMENTS_WIDTH_LABEL" default="0" description="PLG_JLVKCOMMENTS_WIDTH_DESC"/>
+				<field name="height" type="text" label="PLG_JLVKCOMMENTS_HEIGHT_LABEL" default="0" description="PLG_JLVKCOMMENTS_HEIGHT_DESC"/>
+				<field name="mini" type="list" default="auto" label="PLG_JLVKCOMMENTS_MINI_LABEL" description="PLG_JLVKCOMMENTS_MINI_DESC">
+					<option value="0">PLG_JLVKCOMMENTS_MINI_OFF</option>
+					<option value="1">PLG_JLVKCOMMENTS_MINI_ON</option>
+					<option value="auto">PLG_JLVKCOMMENTS_MINI_AUTO</option>
+				</field>
+				<field name="pageId" type="text" label="PLG_JLVKCOMMENTS_PAGEID_LABEL" default="" description="PLG_JLVKCOMMENTS_PAGEID_DESC"/>
 				<field name="autoAdd" type="radio" default="0" label="PLG_JLVKCOMMENTS_AUTOADD_LABEL" description="PLG_JLVKCOMMENTS_AUTOADD_DESC" class="btn-group btn-group-yesno">
 				  <option value="0">PLG_JLVKCOMMENTS_NO</option>
 				  <option value="1">PLG_JLVKCOMMENTS_YES</option>

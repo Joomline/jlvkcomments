@@ -2,7 +2,7 @@
 /**
  * Jlvkcomments
  *
- * @version 3.0.0
+ * @version 3.1.0
  * @author Vadim Kunicin(vadim@joomline.ru), Anton Voynov (anton@joomline.ru)
  * @copyright (C) 2010-2024 by Anton Voynov(http://www.joomline.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
@@ -88,7 +88,10 @@ class PlgContentJlvkcomments extends CMSPlugin
 		// Get plugin parameters
 		$apiId = $this->params->get('apiId');
 		$width = $this->params->get('width', 0);
+		$height = $this->params->get('height', 0);
 		$comLimit = $this->params->get('comLimit', 10);
+		$mini = $this->params->get('mini', 'auto');
+		$pageId = $this->params->get('pageId', '');
 		$attach = $this->params->get('attach', '*');
 		$autoPublish = $this->params->get('autoPublish', 1);
 		$norealtime = $this->params->get('norealtime', 0);
@@ -98,7 +101,7 @@ class PlgContentJlvkcomments extends CMSPlugin
 		$wa->registerAndUseScript('vk-api', 'https://vk.com/js/api/openapi.js?169', [], []);
 		
 		// Generate comments widget HTML
-		$pagehash = $article->id;
+		$pagehash = !empty($pageId) ? $pageId : $article->id;
 		$scriptPage = '<div id="jlvkcomments"></div>';
 		$scriptPage .= '<script type="text/javascript">';
 		$scriptPage .= 'function initVKComments() {';
@@ -107,6 +110,12 @@ class PlgContentJlvkcomments extends CMSPlugin
 		$scriptPage .= 'VK.Widgets.Comments("jlvkcomments", {';
 		$scriptPage .= 'limit: ' . (int)$comLimit . ', ';
 		$scriptPage .= 'width: "' . (int)$width . '", ';
+		if ($height > 0) {
+			$scriptPage .= 'height: ' . (int)$height . ', ';
+		}
+		if ($mini !== 'auto') {
+			$scriptPage .= 'mini: ' . (int)$mini . ', ';
+		}
 		$scriptPage .= 'attach: "' . $attach . '", ';
 		$scriptPage .= 'autoPublish: ' . (int)$autoPublish . ', ';
 		$scriptPage .= 'norealtime: ' . (int)$norealtime;

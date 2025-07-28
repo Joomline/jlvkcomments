@@ -44,12 +44,23 @@ class PlgButtonJlvkcommentsoff extends CMSPlugin
 		$app = Factory::getApplication();
 		$doc = Factory::getDocument();
 
-		$getContent = $this->_subject->getContent($name);
-
 		$js = "
 			function insertJlvkcommentsoff(editor) {
-				var content = $getContent
-				if (content.match(/{jlvkcomments-off}/)) {
+				var content = '';
+				if (typeof Joomla !== 'undefined' && Joomla.editors && Joomla.editors.instances && Joomla.editors.instances[editor]) {
+					content = Joomla.editors.instances[editor].getValue();
+				} else if (typeof tinyMCE !== 'undefined' && tinyMCE.get(editor)) {
+					content = tinyMCE.get(editor).getContent();
+				} else if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances[editor]) {
+					content = CKEDITOR.instances[editor].getData();
+				} else {
+					var textarea = document.getElementById(editor);
+					if (textarea) {
+						content = textarea.value;
+					}
+				}
+				
+				if (content && content.match(/{jlvkcomments-off}/)) {
 					return false;
 				} else {
 					jInsertEditorText('{jlvkcomments-off}', editor);

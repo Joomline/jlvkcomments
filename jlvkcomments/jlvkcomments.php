@@ -123,10 +123,13 @@ class PlgContentJlvkcomments extends CMSPlugin
 		// Add comments to article
 		if ($this->params->get('autoAdd')) 
 		{
+			// Remove manual tag if present and add comments automatically
+			$article->text = str_replace("{jlvkcomments}", "", $article->text);
 			$article->text .= $scriptPage;
 		} 
 		else 
 		{
+			// Replace manual tag with comments
 			$article->text = str_replace("{jlvkcomments}", $scriptPage, $article->text);
 		}
 	}

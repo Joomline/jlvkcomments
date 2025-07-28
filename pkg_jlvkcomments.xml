@@ -11,5 +11,6 @@
         <file type="plugin" client="site" group="content">jlvkcomments</file>
         <file type="plugin" client="site" group="editors-xtd">jlvkcommentson</file>
         <file type="plugin" client="site" group="editors-xtd">jlvkcommentsoff</file>
+        <file type="module" client="site">mod_jlvkcomments_browse</file>
 </files>
 </extension>

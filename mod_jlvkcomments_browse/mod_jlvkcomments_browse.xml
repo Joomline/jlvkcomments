@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="5.0" type="module" client="site" method="upgrade">
+	<name>JoomLine VK Comments Browse</name>
+	<author>JoomLine</author>
+	<creationDate>2024</creationDate>
+	<copyright>(C) 2010-2024 by Anton Voynov(https://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>sale@joomline.ru</authorEmail>
+	<authorUrl>https://joomline.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_JLVKCOMMENTS_BROWSE_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_jlvkcomments_browse">mod_jlvkcomments_browse.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jlvkcomments_browse.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jlvkcomments_browse.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_jlvkcomments_browse.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_jlvkcomments_browse.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="apiId" type="text" label="MOD_JLVKCOMMENTS_BROWSE_APIID_LABEL" default="api ID" description="MOD_JLVKCOMMENTS_BROWSE_APIID_DESC"/>
+				<field name="width" type="text" label="MOD_JLVKCOMMENTS_BROWSE_WIDTH_LABEL" default="500" description="MOD_JLVKCOMMENTS_BROWSE_WIDTH_DESC"/>
+				<field name="height" type="text" label="MOD_JLVKCOMMENTS_BROWSE_HEIGHT_LABEL" default="0" description="MOD_JLVKCOMMENTS_BROWSE_HEIGHT_DESC"/>
+				<field name="limit" type="text" label="MOD_JLVKCOMMENTS_BROWSE_LIMIT_LABEL" default="10" description="MOD_JLVKCOMMENTS_BROWSE_LIMIT_DESC"/>
+				<field name="mini" type="list" default="auto" label="MOD_JLVKCOMMENTS_BROWSE_MINI_LABEL" description="MOD_JLVKCOMMENTS_BROWSE_MINI_DESC">
+					<option value="0">MOD_JLVKCOMMENTS_BROWSE_MINI_OFF</option>
+					<option value="1">MOD_JLVKCOMMENTS_BROWSE_MINI_ON</option>
+					<option value="auto">MOD_JLVKCOMMENTS_BROWSE_MINI_AUTO</option>
+				</field>
+				<field name="norealtime" type="radio" default="0" label="MOD_JLVKCOMMENTS_BROWSE_REAL_LABEL" description="MOD_JLVKCOMMENTS_BROWSE_REAL_DESC" class="btn-group btn-group-yesno">
+					<option value="0">MOD_JLVKCOMMENTS_BROWSE_YES</option>
+					<option value="1">MOD_JLVKCOMMENTS_BROWSE_NO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension> 

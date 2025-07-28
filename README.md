@@ -40,3 +40,6 @@ Official page of [RU](http://joomline.ru/rasshirenija/plugin/plugin-jl-vkcomment
 
 # License
 GPL
+
+
+![GitHub all releases](https://img.shields.io/github/downloads/joomline/jlvkcomments/total?style=for-the-badge&color=blue)  ![GitHub release (latest by SemVer)](https://img.shields.io/github/downloads/Joomline/jlvkcomments/latest/total?style=for-the-badge&color=blue)

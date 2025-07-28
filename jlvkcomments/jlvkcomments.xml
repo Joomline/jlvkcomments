@@ -25,7 +25,7 @@
 				<field name="apiId" type="text" label="PLG_JLVKCOMMENTS_APIID_LABEL" default="api ID"/>
 				<field name="comLimit" type="text" label="PLG_JLVKCOMMENTS_COUNT_LABEL" default="10"/>
 				<field name="width" type="text" label="PLG_JLVKCOMMENTS_WIDTH_LABEL" default="0" description="PLG_JLVKCOMMENTS_WIDTH_DESC"/>
-				<field name="autoAdd" type="radio" default="0" label="PLG_JLVKCOMMENTS_AUTOADD_LABEL" description="PLG_JLVKCOMMENTS_AUTOADD_DESC">
+				<field name="autoAdd" type="radio" default="0" label="PLG_JLVKCOMMENTS_AUTOADD_LABEL" description="PLG_JLVKCOMMENTS_AUTOADD_DESC" class="btn-group btn-group-yesno">
 				  <option value="0">PLG_JLVKCOMMENTS_NO</option>
 				  <option value="1">PLG_JLVKCOMMENTS_YES</option>
 				</field>
@@ -38,11 +38,11 @@
 				  <option value="video">PLG_JLVKCOMMENTS_ATTACH_VIDEO</option>
 				  <option value="link">PLG_JLVKCOMMENTS_ATTACH_LINKS</option>
 				</field>
-				<field name="autoPublish" type="radio" default="1" label="PLG_JLVKCOMMENTS_PUBLISH_LABEL" description="PLG_JLVKCOMMENTS_PUBLISH_DESC">
+				<field name="autoPublish" type="radio" default="1" label="PLG_JLVKCOMMENTS_PUBLISH_LABEL" description="PLG_JLVKCOMMENTS_PUBLISH_DESC" class="btn-group btn-group-yesno">
 				  <option value="0">PLG_JLVKCOMMENTS_NO</option>
 				  <option value="1">PLG_JLVKCOMMENTS_YES</option>
 				</field>
-				<field name="norealtime" type="radio" default="0" label="PLG_JLVKCOMMENTS_REAL_LABEL" description="PLG_JLVKCOMMENTS_REAL_DESC">
+				<field name="norealtime" type="radio" default="1" label="PLG_JLVKCOMMENTS_REAL_LABEL" description="PLG_JLVKCOMMENTS_REAL_DESC" class="btn-group btn-group-yesno">
 				  <option value="1">PLG_JLVKCOMMENTS_NO</option>
 				  <option value="0">PLG_JLVKCOMMENTS_YES</option>
 				</field>

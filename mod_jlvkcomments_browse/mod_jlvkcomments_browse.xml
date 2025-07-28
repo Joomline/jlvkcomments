@@ -36,6 +36,10 @@
 					<option value="0">MOD_JLVKCOMMENTS_BROWSE_YES</option>
 					<option value="1">MOD_JLVKCOMMENTS_BROWSE_NO</option>
 				</field>
+				<field name="hideLink" type="radio" default="0" label="MOD_JLVKCOMMENTS_BROWSE_LINK_LABEL" description="MOD_JLVKCOMMENTS_BROWSE_LINK_DESC" class="btn-group btn-group-yesno">
+					<option value="0">MOD_JLVKCOMMENTS_BROWSE_NO</option>
+					<option value="1">MOD_JLVKCOMMENTS_BROWSE_YES</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

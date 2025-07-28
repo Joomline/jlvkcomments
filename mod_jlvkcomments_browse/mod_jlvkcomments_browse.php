@@ -15,8 +15,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\WebAsset\WebAssetManager;
 
-// Include helper file
-require_once __DIR__ . '/helper.php';
+
 
 // Get module parameters
 $apiId = $params->get('apiId');
@@ -25,6 +24,7 @@ $height = $params->get('height', 0);
 $limit = $params->get('limit', 10);
 $mini = $params->get('mini', 'auto');
 $norealtime = $params->get('norealtime', 0);
+$hideLink = $params->get('hideLink', 0);
 
 // Add VK API script using WebAssetManager
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
@@ -32,6 +32,14 @@ $wa->registerAndUseScript('vk-api-browse', 'https://vk.com/js/api/openapi.js?169
 
 // Generate widget HTML
 $widgetHtml = '<div id="vk_comments_browse"></div>';
+
+// Add link if not hidden
+if (!$hideLink) {
+    $widgetHtml .= '<div class="jlvkcomments-link" style="text-align: right; margin-top: 10px; font-size: 10px;">';
+    $widgetHtml .= '<a href="https://joomline.ru/rasshirenija/plugin/plugin-jl-vkcomments.html" target="_blank" style="color: #999; text-decoration: none;">Расширения ВК</a>';
+    $widgetHtml .= '</div>';
+}
+
 $widgetHtml .= '<script type="text/javascript">';
 $widgetHtml .= 'function initVKCommentsBrowse() {';
 $widgetHtml .= 'if (typeof VK !== "undefined") {';
